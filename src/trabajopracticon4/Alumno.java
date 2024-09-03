@@ -19,7 +19,7 @@ public class Alumno {
     private String nombre;
     private Set <Materia> materias;
 
-    public Alumno(int nroLegajo, String apellido, String nombre,) {
+    public Alumno(int nroLegajo, String apellido, String nombre) {
         this.nroLegajo = nroLegajo;
         this.apellido = apellido;
         this.nombre = nombre;
