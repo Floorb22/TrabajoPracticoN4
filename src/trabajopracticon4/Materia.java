@@ -12,7 +12,7 @@ package trabajopracticon4;
 public class Materia {
     
     private int idMateria;
-    private String nombre:
+    private String nombre;
     private int año;
 
     public Materia(int idMateria, String nombre, int año) {
