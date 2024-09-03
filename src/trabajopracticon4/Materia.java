@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+La Materia tiene un idMateria, un nombre de la materia y año al que pertenece, tiene además
+un constructor que inicializa sus propiedades y métodos get y set para cada uno de sus atributos.
  */
 package trabajopracticon4;
 

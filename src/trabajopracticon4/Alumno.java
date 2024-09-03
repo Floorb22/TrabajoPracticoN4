@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Un Alumno tiene un nro de legajo, un apellido, un nombre y una lista HashSet de
+materias en las que está inscripto; para ello tiene un método agregarMateria que permite
+inscribir al Alumno en una materia determinada (implementar de manera tal que no deje
+inscribir un alumno en dos materias iguales.) y otro método cantidadMaterias que devuelve la
+cantidad de materias a las que está inscripto el alumno.
  */
 package trabajopracticon4;
 
@@ -13,11 +15,11 @@ import java.util.Set;
  * @author analf
  */
 public class Alumno {
-    
+
     private int nroLegajo;
     private String apellido;
     private String nombre;
-    private Set <Materia> materias;
+    private Set<Materia> materias;
 
     public Alumno(int nroLegajo, String apellido, String nombre) {
         this.nroLegajo = nroLegajo;
@@ -50,12 +52,17 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-   
-
-    public void agregartMaterias(Materia materia) {
-        this.materias = materias;
+    protected void agregarMateria(Materia m) {
+        if (materias.contains(m)) {
+            System.out.println(nombre + " ya está inscripto en " + m.getNombre());
+        } else {
+            materias.add(m);
+            System.out.println(nombre + " se ha inscripto en " + m.getNombre());
+        }
     }
-    
-    
-    
+
+    protected int cantidadMaterias() {
+        return materias.size();
+    }
+
 }
