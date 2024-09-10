@@ -28,6 +28,12 @@ public class Alumno {
         this.materias = new HashSet<>();
     }
 
+    public Alumno(String apellido, String nombre) {
+        this.apellido = apellido;
+        this.nombre = nombre;
+    }
+    
+
     public int getNroLegajo() {
         return nroLegajo;
     }

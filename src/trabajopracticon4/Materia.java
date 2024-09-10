@@ -20,6 +20,10 @@ public class Materia {
         this.año = año;
     }
 
+    public Materia(String nombre) {
+        this.nombre = nombre;
+    }
+    
     public int getIdMateria() {
         return idMateria;
     }
