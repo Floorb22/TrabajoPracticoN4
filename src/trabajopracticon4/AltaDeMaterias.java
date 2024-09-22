@@ -1,6 +1,7 @@
 package trabajopracticon4;
 
 import java.util.Set;
+import javax.swing.JOptionPane;
 import static trabajopracticon4.Colegio.materiasSet;
 
 public class AltaDeMaterias extends javax.swing.JInternalFrame {
@@ -82,6 +83,11 @@ public class AltaDeMaterias extends javax.swing.JInternalFrame {
         b_nuevo.setBackground(new java.awt.Color(0, 0, 0));
         b_nuevo.setForeground(new java.awt.Color(51, 153, 255));
         b_nuevo.setText("Nuevo");
+        b_nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_nuevoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,8 +179,20 @@ public class AltaDeMaterias extends javax.swing.JInternalFrame {
 
     //Guardar materia en el hashset
     private void b_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_guardarActionPerformed
+        try{
         cargarMateria();
+        JOptionPane.showMessageDialog(this, "Guardado");
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Error al guardar materia");
+        }
     }//GEN-LAST:event_b_guardarActionPerformed
+
+    //Nuevos datos
+    private void b_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_nuevoActionPerformed
+        jtf_codigomateria.setText("");
+        jtf_nombremateria.setText("");
+        jtf_añomateria.setText("");
+    }//GEN-LAST:event_b_nuevoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

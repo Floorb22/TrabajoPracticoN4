@@ -1,6 +1,7 @@
 package trabajopracticon4;
 
 import java.util.Set;
+import javax.swing.JOptionPane;
 import static trabajopracticon4.Colegio.alumnosSet;
 
 public class AltaDeAlumnos extends javax.swing.JInternalFrame {
@@ -199,7 +200,12 @@ public class AltaDeAlumnos extends javax.swing.JInternalFrame {
 
     //Guardar Alumno en el HashSet
     private void b_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_guardarActionPerformed
+        try{
         cargarAlumno();
+        JOptionPane.showMessageDialog(this, "Guardado");
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Error al guardar alumno");
+        }
     }//GEN-LAST:event_b_guardarActionPerformed
 
     //Nuevos datos

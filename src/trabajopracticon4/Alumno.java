@@ -70,6 +70,7 @@ public class Alumno {
             System.out.println(nombre + " se ha inscripto en " + m.getNombre());
         }
     }
+    
 
     protected int cantidadMaterias() {
         return materias.size();

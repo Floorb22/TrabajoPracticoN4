@@ -1,11 +1,14 @@
 package trabajopracticon4;
 
 import java.util.Set;
+import javax.swing.JOptionPane;
 import static trabajopracticon4.Colegio.alumnosSet;
 import static trabajopracticon4.Colegio.materiasSet;
 
 public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
-
+    
+    String n, ap, mat;
+    Materia m;
     public FormularioDeInscripcion(Set<Alumno> alumnosSet, Set<Materia> materiasSet) {
         initComponents();
         cargarComboMateria();
@@ -54,6 +57,11 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         });
 
         jcb_alumnos.setBackground(new java.awt.Color(204, 204, 204));
+        jcb_alumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_alumnosActionPerformed(evt);
+            }
+        });
 
         b_inscribir.setBackground(new java.awt.Color(0, 0, 0));
         b_inscribir.setForeground(new java.awt.Color(51, 153, 255));
@@ -124,13 +132,27 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Inscribir
     private void b_inscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_inscribirActionPerformed
-
+        try{
+        inscribirAlumno();
+        JOptionPane.showMessageDialog(this, "Inscripto");
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Error al inscribir el alumno");
+        }
     }//GEN-LAST:event_b_inscribirActionPerformed
 
+    //Seleccionar materia
     private void jcb_materiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_materiasActionPerformed
-        // TODO add your handling code here:
+        m = (Materia) jcb_materias.getSelectedItem();
     }//GEN-LAST:event_jcb_materiasActionPerformed
+
+    //Selecionar alumno
+    private void jcb_alumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_alumnosActionPerformed
+        Alumno a = (Alumno) jcb_alumnos.getSelectedItem();
+        n = a.getNombre();
+        ap = a.getApellido();
+    }//GEN-LAST:event_jcb_alumnosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -143,6 +165,9 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<Materia> jcb_materias;
     // End of variables declaration//GEN-END:variables
 
+    
+    
+     
     //ComboBox Materias
     private void cargarComboMateria() {
         Materia ingles = new Materia("Ingles 1");
@@ -152,6 +177,8 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         materiasSet.add(ingles);
         materiasSet.add(matematicas);
         materiasSet.add(laboratorio);
+        
+        
         for (Materia materia : materiasSet) {
             jcb_materias.addItem(materia);
         }
@@ -169,5 +196,10 @@ public class FormularioDeInscripcion extends javax.swing.JInternalFrame {
         for (Alumno alumno : alumnosSet) {
             jcb_alumnos.addItem(alumno);
         }
+    }
+    
+    private void inscribirAlumno(){
+        Alumno nuevo = new Alumno (ap, n);
+        nuevo.agregarMateria(m);
     }
 }
