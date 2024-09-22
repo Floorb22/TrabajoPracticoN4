@@ -32,6 +32,10 @@ public class Alumno {
         this.apellido = apellido;
         this.nombre = nombre;
     }
+
+    Alumno() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 
     public int getNroLegajo() {
@@ -71,4 +75,10 @@ public class Alumno {
         return materias.size();
     }
 
+    @Override
+    public String toString() {
+        return apellido + " " + nombre ;
+    }
+
+    
 }

@@ -23,6 +23,10 @@ public class Materia {
     public Materia(String nombre) {
         this.nombre = nombre;
     }
+
+    Materia() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public int getIdMateria() {
         return idMateria;
@@ -47,6 +51,12 @@ public class Materia {
     public void setAño(int año) {
         this.año = año;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+    
     
     
 }

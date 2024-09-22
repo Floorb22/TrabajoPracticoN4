@@ -32,29 +32,20 @@ public class Colegio {
     public static Set<Alumno> alumnosSet = new HashSet<>();
     public static Set<Materia> materiasSet = new HashSet<>();
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Scanner leer = new Scanner(System.in);
 
         //1
         Materia m1 = new Materia(1, "Ingles 1", 1);
         Materia m2 = new Materia(2, "Matematicas", 1);
         Materia m3 = new Materia(3, "Laboratorio", 1);
-        Materia ingles = new Materia("Ingles 1");
-        Materia matematicas = new Materia ("Matematicas");
-        Materia laboratorio = new Materia ("Laboratorio");
-        
-        materiasSet.add(ingles);
-        materiasSet.add(matematicas);
-        materiasSet.add(laboratorio);
+       
+       
 
         //2
         Alumno a1 = new Alumno(1001, "Lopez", "Martin");
         Alumno a2 = new Alumno(1002, "Martinez", "Brenda");
-        Alumno lopezMartin = new Alumno("Lopez", "Martin");
-        Alumno martinezBrenda = new Alumno ("Martinez" , "Brenda");
-        
-        alumnosSet.add(lopezMartin);
-        alumnosSet.add(martinezBrenda);
+       
 
         //3
         a1.agregarMateria(m1);
@@ -70,6 +61,9 @@ public class Colegio {
         //5
         System.out.println("El alumno " + a1.getNombre() + " " + a1.getApellido() + " está inscripto en " + a1.cantidadMaterias() + " materias.");
         System.out.println("El alumno " + a2.getNombre() + " " + a2.getApellido() + " está inscripto en " + a2.cantidadMaterias() + " materias.");
-
+        
+              
+       
+        
     }
 }
